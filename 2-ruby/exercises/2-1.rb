@@ -2,7 +2,7 @@ str =  "Hello world"
 puts str
 str.index("world")
 
-(0..10).each { |i|  puts "pedrorijo91" }
+10.times { puts "pedrorijo91" }
 
 def randomGuess(max)
 	n = rand(max)
