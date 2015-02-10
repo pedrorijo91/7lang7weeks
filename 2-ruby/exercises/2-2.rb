@@ -34,3 +34,13 @@ treeHash = {'grandpa' => { 'dad' => {'child 1' => {}, 'child 2' => {} }, 'uncle'
 
 tree = Tree.new(treeHash)
 tree.visit_all { |n| puts n.node_name }
+
+
+def grep(filename, exp)
+  lineNum = 0
+  File.open(filename).each do |line|
+    puts "#{lineNum += 1} #{line}" if line.include? exp
+  end
+end
+
+grep("2-2.rb", "def")
