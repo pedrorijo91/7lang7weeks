@@ -57,10 +57,28 @@ l2d flatten avg println
 
 "Exercise 5 -------------" println
 
+List2D := List clone
+
+dim := method(x,y, List2D clone setSize(y) mapInPlace(_, List clone setSize(x)) )
+
+dim(5,2) println
+
+List2D set := method(x,y,value, at(y) atPut(x,value))
+List2D get := method(x,y, at(y) at(x))
+
+l := dim(5,2)
+l set(2,1,"foo")
+l get(2,1) println
+
 ##### exercise 6 #####
 
 "Exercise 6 -------------" println
 
+List2D transpose := method(
+  other:= dim(size, at(0) size)
+  foreach(y,row, row foreach(x,value, other set(y,x,value)))
+  other
+)
 
 ##### exercise 7 #####
 
